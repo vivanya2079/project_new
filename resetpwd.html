@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <title>Reset form - Bedimcode</title>
+</head>
+<body>
+   <div class="login">
+      <img src="assets/img/blank1.webp" alt="image" class="login__bg">
+
+      <form action="" class="login__form" onsubmit="return validateForm()">
+         <h1 class="login__title">Reset Password</h1>
+
+         <div class="login__inputs">
+            <div class="login__box">
+               <input type="password" placeholder="New Password" required class="login__input" id="newPassword">
+               <i class="ri-lock-2-fill"></i>
+            </div>
+
+            <div class="login__box">
+               <input type="password" placeholder="Confirm Password" required class="login__input" id="confirmPassword">
+               <i class="ri-lock-2-fill"></i>
+            </div>
+         </div>
+         <button type="submit" class="login__button">Reset Password</button>
+      </form>
+
+      <script>
+         function validateForm() {
+            var newPassword = document.getElementById('newPassword').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (newPassword == "") {
+               alert("Please fill the password field");
+               return false;
+            }
+            if (newPassword.length <= 5 || newPassword.length > 20) {
+               alert("Passwords length must be between 5 and 20");
+               return false;
+            }
+
+            if (newPassword != confirmPassword) {
+               alert("Password Mismatch");
+               return false;
+            }
+
+            if (confirmPassword == "") {
+               alert("Please fill the confirm password field");
+               return false;
+            }
+            return true; // Submit the form if all conditions are met
+         }
+      </script>
+   </div>
+</body>
+</html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <title>Forgot form - Bedimcode</title>
+</head>
+<body>
+    <div class="login">
+        <img src="assets/img/blank1.webp" alt="image" class="login__bg">
+
+        <form action="" class="login__form">
+            <h1 class="login__title">Forgot Password?</h1>
+            <p class="login__paragraph">You can reset your password here.</p>
+
+            <div class="login__inputs">
+               <div class="login__box">
+                  <input type="email" id="email" placeholder="Email ID" required class="login__input">
+                  <i class="ri-mail-fill"></i>
+               </div>
+               <button type="submit" class="login__button">Reset Password</button>
+            </div>
+        </form>
+
+        <script>
+            function validateForm() {
+                var email = document.getElementById("email").value;
+
+                // Simple email validation
+                if (!/\S+@\S+\.\S+/.test(email)) {
+                    alert("Please enter a valid email address.");
+                    return false;
+                }
+
+                // Additional checks can be added as needed
+
+                return true;
+            }
+        </script>
+    </div>
+</body>
+</html>
